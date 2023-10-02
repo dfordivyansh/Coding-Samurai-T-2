@@ -1,0 +1,188 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    height: 100vh;
+    background-image: linear-gradient(rgba(9, 5, 54,0.3),rgba(5, 4, 46, 0.7)), url("images/background.jpg");
+    background-repeat: inherit;
+    background-position: center;
+    background-size: cover;
+}
+.header{
+    background: url("images/heading.jpg");
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    color: aliceblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+.header h1{
+    font-size: 40px;
+    font-weight: 900;
+    -webkit-text-stroke: 3px #fff;
+    background: linear-gradient(#ffff00, #ff6600, #ff3399, #990099, #3300cc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.header h2{
+    font-size: 50px;
+}
+.clock{
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.9);
+    background: url("images/clock.jpg");
+    color: #fff;
+    height: 18vh;
+    border: 2px solid #fff;
+    border-radius: 14px;
+    margin-left: 37%;
+    margin-top: 20px;
+}
+.clock h1{
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+.container{
+    position: relative;
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+}
+.AddTask{
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+}
+.AddTask > input[type="text"]{
+    width: 90%;
+    color: #333;
+    font-weight: 600;
+    border: none;
+    border-bottom: 2px solid gray;
+    background: url("images/task.jpg");
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 25px;
+    outline: auto;
+}
+.AddTask button{
+    margin: 0 15px;
+    background: #222;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 10px;
+    outline: auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.NotCompleted{
+    margin: 10px ;
+    padding: 25px;
+}
+.Completed{
+    margin: 10px ;
+    padding: 25px;
+}
+h3{
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    background: url("images/task status.jpg");
+    border-radius: 10px;
+    border: 2px solid seashell;
+    padding: 8px;
+}
+ol{
+    list-style: none;
+    counter-reset: my-counter;
+}
+ol li{
+    width: 100%;
+    padding: 20px;
+    margin: 5px 0;
+    background: url("images/incomp.jpg");
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    counter-increment: my-counter;
+}
+ol.Completed li{
+    background: url("images/comp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ol li::before{
+    content: counter(my-counter);
+    background: #231381;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    margin-right: 0.5rem;
+}
+li button{
+    float: right;
+    padding: 5px;
+    font-size: 28px;
+    line-height: 28px;
+    margin-right: 15px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.addbtn:hover{
+    box-shadow: 0 0 0 4px #fff, 0 0 0 8px #4070f4;
+    transition: 0.3s ease;
+}
+.footer{
+    background-color: darkgray;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 80px;
+}
+@media screen and (max-width: 600px){
+    .header{
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        color: aliceblue;
+        background-size: cover;
+    }    
+    .header h1{
+        font-size: 40px;
+        text-align: center;
+    }
+    .header h2{
+        font-size: 40px;
+    }
+    .clock{
+        margin-left: 15px;
+    }
+}
+#preloader{
+    background: #000 url(images/gradient-circle-loading.gif) no-repeat center;
+    background-size: 30%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
